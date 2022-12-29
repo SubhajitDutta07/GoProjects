@@ -1,3 +1,3 @@
 # GoProjects
 
-All the goLanf projects that i have made 
+All the goLang projects that i have made. 
