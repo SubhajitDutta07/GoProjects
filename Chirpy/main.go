@@ -30,8 +30,12 @@ func main() {
 
 	apiRouter := chi.NewRouter()
 	apiRouter.Get("/healthz", handlerRediness)
-	apiRouter.Get("/metrics", apiCfg.handlerMetrics)
-	r.Mount("/api", apiRouter)
+	r.Mount("/api", apiRouter)					// added a new route for the api section
+
+	adminRouter := chi.NewRouter()
+	adminRouter.Get("/metrics", apiCfg.handlerMetrics)
+	r.Mount("/admin",adminRouter)				// added a new route for the admin section 
+	
 
 	corsMux := middlewareCors(r)
 
@@ -43,5 +47,3 @@ func main() {
 	log.Printf("Serving files from %s on port: %s\n", filepathRoot, port)
 	log.Fatal(srv.ListenAndServe())
 }
-
-
