@@ -19,7 +19,7 @@ func GetBook(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "pkglication/json")
 	w.WriteHeader(http.StatusOK)
 	// write helps us the send something to the frontend
-	//here json of the NewBooks
+	// here json of the NewBooks
 	w.Write(res)
 }
 
